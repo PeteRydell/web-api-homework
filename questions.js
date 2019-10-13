@@ -33,10 +33,10 @@ var viewScores = document.getElementById("viewScores");
 var navBar = document.getElementById("navbar");
 var quizCard = document.getElementById("quizCard");
 var startEl = document.getElementById("startBtn")
+var questionText = document.getElementsByTagName("p");
 
 //Additional Variables
 var cardTitle = document.createElement("h3");
-var questionText = document.createElement("p");
 var startQuiz = document.createElement("button");
 var initsEl = document.createElement("input");
 var initsSub = document.createElement("button");
@@ -66,7 +66,6 @@ quizCard.addEventListener(click, function(event){
 
 })
 
-
 function startTimer(){
 
     timerInterval = setInterval(function() {
@@ -80,7 +79,7 @@ function startTimer(){
           viewFinalScore();
         }
     
-    }, 1000);
+    });
 };
 
 function clearScreen(){
@@ -125,13 +124,10 @@ function renderQuestion(num){
 
 };
 
-//Quiz Score Values
 var scoreTrack = 0;
 var questionArr = 0;
 var questionNum = 1;
-var score = 0;
 var denTimer = 75;
-var timerCount
 
 var scores = JSON.parse(localStorage.getItem("score"));
 
